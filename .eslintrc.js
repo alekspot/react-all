@@ -19,7 +19,8 @@ module.exports = {
     rules: {
         indent: ['error', 4],
         semi: 'off',
-        quotes: ['error', 'single']
+        quotes: ['error', 'single'],
+        'react/prop-types': 'off'
     },
     ignorePatterns: ['webpack.config.js']
 };
