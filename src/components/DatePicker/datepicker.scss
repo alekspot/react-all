@@ -1,0 +1,21 @@
+@import 'react-datepicker/dist/react-datepicker.css';
+.react-datepicker--time-only {
+    &, & * {
+        border-radius: 0 !important;
+    }
+    .react-datepicker__triangle,
+    .react-datepicker__header--time {
+        display: none;
+    }
+    
+    .react-datepicker__time-list-item {
+        height: auto !important;
+        &--disabled {
+            display: none;
+        }
+    }
+    
+}
+.d-flex {
+    display: flex;
+}

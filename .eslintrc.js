@@ -20,7 +20,9 @@ module.exports = {
         indent: ['error', 4],
         semi: 'off',
         quotes: ['error', 'single'],
-        'react/prop-types': 'off'
+        'react/prop-types': 'off',
+        'react/display-name': 'off'
+
     },
     ignorePatterns: ['webpack.config.js']
 };
