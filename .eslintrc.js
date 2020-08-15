@@ -22,5 +22,5 @@ module.exports = {
         quotes: ['error', 'single'],
         'react/prop-types': 'off'
     },
-    ignorePatterns: ['webpack.config.js']
+    ignorePatterns: ['webpack.config.js', 'webpack.alias.js' ]
 };
