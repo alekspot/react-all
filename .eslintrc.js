@@ -24,5 +24,5 @@ module.exports = {
         'react/display-name': 'off'
 
     },
-    ignorePatterns: ['webpack.config.js']
+    ignorePatterns: ['webpack.config.js', 'webpack.alias.js' ]
 };
