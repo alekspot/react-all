@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { App } from './components/App';
-import './scss/index.scss'
+import { DropdownDemo } from './components/DropdownDemo';
+import './scss/index.scss';
 
 
-function render() {
-    ReactDOM.render(<App/>, document.getElementById('app'));
+function render(): void {
+    ReactDOM.render(<DropdownDemo/>, document.getElementById('app'));
 }
 
 
-render()
+render();

@@ -18,8 +18,9 @@ module.exports = {
     ],
     rules: {
         indent: ['error', 4],
-        semi: 'off',
-        quotes: ['error', 'single']
+        semi: 'error',
+        quotes: ['error', 'single'],
+        '@typescript-eslint/explicit-function-return-type': 'error'
     },
     ignorePatterns: ['webpack.config.js']
 };

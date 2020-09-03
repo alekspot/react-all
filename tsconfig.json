@@ -14,7 +14,8 @@
         "components": ["components"],
         "utils": ["utils"],
         "types": ["types"]
-      }
+      },
+      "allowSyntheticDefaultImports": true
     },
     "include": ["src"]
 }

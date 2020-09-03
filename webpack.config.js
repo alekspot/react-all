@@ -3,8 +3,6 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const optimization = require('./webpack.optimization');
-const alias = require('./webpack.alias');
 
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
@@ -24,7 +22,11 @@ module.exports = {
     },
     resolve: {
         extensions: [ '.tsx', '.ts', '.js' ],
-        alias
+        alias: {
+            'components': path.resolve(__dirname, './src/components/'),
+            'types': path.resolve(__dirname, './src/types/'),
+            'utils': path.resolve(__dirname, './src/utils/')
+        }
     },
     module: {
         rules: [
@@ -36,7 +38,7 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.scss|css$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -55,7 +57,6 @@ module.exports = {
         filename: filename('js'),
         path: path.resolve(__dirname, 'build'),
     },
-    optimization,
     plugins: [
         new CleanWebpackPlugin(),
         new HTMLWebpackPlugin({
