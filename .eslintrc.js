@@ -27,7 +27,8 @@ module.exports = {
         'keyword-spacing': ['error', {'before': true, 'after': true}],
         'object-curly-spacing': 'error',
         'react/jsx-curly-spacing': ['error'],
-        'padding-line-between-statements': ['error', {'blankLine': 'always', 'prev': '*', 'next': 'return'}],
+        'padding-line-between-statements': ['error', { 'blankLine': 'always', 'prev': '*', 'next': 'return' }],
+        'react/display-name': 'off'
     },
     ignorePatterns: ['webpack.config.js']
 };
