@@ -28,6 +28,7 @@ module.exports = {
         'object-curly-spacing': 'error',
         'react/jsx-curly-spacing': ['error'],
         'padding-line-between-statements': ['error', {'blankLine': 'always', 'prev': '*', 'next': 'return'}],
+        'react/display-name': 'off'
     },
     ignorePatterns: ['webpack.config.js']
 };
