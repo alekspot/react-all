@@ -2,19 +2,26 @@
   "name": "react-all",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --mode production"
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "tsc": "tsc --project tsconfig.json",
+    "start": "npx ts-node index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "module-alias": "^2.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@types/express": "^4.17.8",
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",
     "@typescript-eslint/eslint-plugin": "^3.9.0",
@@ -29,9 +36,13 @@
     "sass": "^1.26.10",
     "sass-loader": "^9.0.3",
     "ts-loader": "^8.0.2",
+    "ts-node": "^9.0.0",
     "typescript": "^3.9.7",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
+  },
+  "_moduleAliases": {
+    "@components": "components"
   }
 }

@@ -1,21 +1,20 @@
 const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const optimization = require('./webpack.optimization');
-const alias = require('./webpack.alias');
 
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 
-const filename = ext => isDev ? `bundle.${ext}` : `[name].[hash].${ext}`
+//const filename = ext => isDev ? `bundle.${ext}` : `[name].[hash].${ext}`
+const filename = ext => `js/bundle.${ext}`
 
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
-    entry: {
-        main: path.resolve(__dirname, 'src/index.tsx'),
-        utils: path.resolve(__dirname, 'src/utils/utils.ts'),
+    entry: './client/app.tsx',
+    output: {
+        filename: filename('js'),
+        path: __dirname + '/public'
     },
     devtool: isDev ? 'source-map': false,
     devServer: {
@@ -25,9 +24,7 @@ module.exports = {
     resolve: {
         extensions: [ '.tsx', '.ts', '.js' ],
         alias: {
-            'components': path.resolve(__dirname, './src/components/'),
-            'types': path.resolve(__dirname, './src/types/'),
-            'utils': path.resolve(__dirname, './src/utils/')
+            '@components': __dirname + '/components/'
         }
     },
     module: {
@@ -55,22 +52,11 @@ module.exports = {
             },
         ],
     },
-    output: {
-        filename: filename('js'),
-        path: path.resolve(__dirname, 'build'),
-    },
-    optimization,
+   // optimization,
     plugins: [
         new CleanWebpackPlugin(),
-        new HTMLWebpackPlugin({
-            template: 'index.html',
-            minifi: {
-                removeComments: isProd,
-                collapseWhitespace: isProd
-            }
-        }),
         new MiniCssExtractPlugin({
-            filename: filename('css')
+            filename: "css/main.css"
         })
     ]
 };

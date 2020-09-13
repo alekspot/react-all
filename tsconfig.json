@@ -1,20 +1,18 @@
 {
     "compilerOptions": {
       "outDir": "dist",
-      "sourceMap": true,
+      //"sourceMap": true,
       "moduleResolution": "node",
       "noImplicitAny": true,
       "experimentalDecorators": true,
-      "module": "es6",
+      "module": "CommonJS",
       "target": "es5",
       "jsx": "react",
       "allowJs": true,
-      "baseUrl": "src",
+      "baseUrl": "./",
       "paths": {
-        "components": ["components"],
-        "utils": ["utils"],
-        "types": ["types"]
+        "@components/*": ["components/*"]
       }
     },
-    "include": ["src"]
+    "include": ["public", "components", "index.ts", "src/types", "src/utils"]
 }
