@@ -1,1 +1,1 @@
-export const toStr = (arg: number): string => arg.toString()
+export const toStr = (arg: number): string => arg.toString();

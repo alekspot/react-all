@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { App } from './components/App';
-import './scss/index.scss'
+import {App} from '@components/App';
+import './scss/index.scss';
 
 
 function render() {
@@ -9,4 +9,4 @@ function render() {
 }
 
 
-render()
+render();

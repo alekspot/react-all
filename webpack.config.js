@@ -4,15 +4,13 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const optimization = require('./webpack.optimization');
-const alias = require('./webpack.alias');
-
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 
 const filename = ext => isDev ? `bundle.${ext}` : `[name].[hash].${ext}`
 
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
+    context: path.resolve(__dirname, 'src'), 
     entry: {
         main: path.resolve(__dirname, 'src/index.tsx'),
         utils: path.resolve(__dirname, 'src/utils/utils.ts'),
@@ -25,9 +23,9 @@ module.exports = {
     resolve: {
         extensions: [ '.tsx', '.ts', '.js' ],
         alias: {
-            'components': path.resolve(__dirname, './src/components/'),
-            'types': path.resolve(__dirname, './src/types/'),
-            'utils': path.resolve(__dirname, './src/utils/')
+            '@components': path.resolve(__dirname, 'src/components/'),
+            '@types': path.resolve(__dirname, 'src/types/'),
+            '@utils': path.resolve(__dirname, 'src/utils/')
         }
     },
     module: {
