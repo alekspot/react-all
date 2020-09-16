@@ -1,18 +1,13 @@
 import * as React from 'react';
-import {toStr} from '@utils/utils';
-import {Test} from './Test/Test';
+import {Mouse} from './Mouse';
+import {Cat} from './Cat';
 
-
-export const App: React.FC = () => {
-    const [count, setCount] = React.useState(0);
-    if (count) {
-        return null; 
+export class App extends React.Component {
+    render(): JSX.Element {
+        return (
+            <div>
+                <Mouse render={Cat} />
+            </div>
+        );
     }
-
-    return (
-        <div>App
-            <Test />
-            <button onClick={() => {setCount(count + 1);}}></button>
-        </div>
-    );
-};
+}
