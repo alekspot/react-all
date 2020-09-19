@@ -11,14 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash.isequal": "^4.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-dropdown": "^1.8.0"
   },
   "devDependencies": {
-    "@types/lodash.findindex": "^4.6.6",
-    "@types/lodash.isequal": "^4.5.5",
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",
     "@typescript-eslint/eslint-plugin": "^3.9.0",

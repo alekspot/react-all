@@ -20,7 +20,8 @@ module.exports = {
         indent: ['error', 4],
         semi: 'error',
         quotes: ['error', 'single'],
-        '@typescript-eslint/explicit-function-return-type': 'error'
+        '@typescript-eslint/explicit-function-return-type': 'error',
+        'react/display-name': 'off'
     },
     ignorePatterns: ['webpack.config.js']
 };
