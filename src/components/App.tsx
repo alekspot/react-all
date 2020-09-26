@@ -1,18 +1,42 @@
 import * as React from 'react';
-import {toStr} from '@utils/utils';
-import {Test} from './Test/Test';
+import {observer} from 'mobx-react';
+import {useTodoStore} from '../store/StoreContext';
 
+export const App: React.FC = observer(() => {
+    const {add, getCount, loadTodos, getTodos} = useTodoStore();
 
-export const App: React.FC = () => {
-    const [count, setCount] = React.useState(0);
-    if (count) {
-        return null; 
-    }
+    const [arr, setArr] = React.useState([]);
+
+    
+    React.useEffect(() => {
+        // add();
+        //loadTodos();
+        //setArr([1, 2, 3]);
+    }, []);
 
     return (
-        <div>App
-            <Test />
-            <button onClick={() => {setCount(count + 1);}}></button>
+        
+        <div>
+            <div>
+                {console.log('render')}
+                {getCount}
+            </div>
+            <div>
+                {/* {
+                    getTodos.map(t => {
+                        debugger
+                        return <p key={t.id}>{t.title}</p>;
+                    })
+                } */}
+                {arr.map(n => {
+                    console.log('render!!!');
+                    debugger;
+                    return <h1 key={n}>{n.id}</h1>;
+                })}
+            </div>
+
+            <button onClick={() => {add();}}>+</button>
         </div>
     );
-};
+});
+
