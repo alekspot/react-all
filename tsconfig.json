@@ -13,6 +13,5 @@
       "paths": {
         "@components/*": ["components/*"]
       }
-    },
-    "include": ["public", "components", "index.ts", "src/types", "src/utils"]
+    }
 }
