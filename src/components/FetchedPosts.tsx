@@ -1,19 +1,35 @@
 import * as React from 'react';
+import {loadTodo} from '../redux/actions';
+import {connect} from 'react-redux';
+import {AppStateType} from 'src/redux/StoreProvider';
+import {TodoType} from '@models/Todo';
 
 type Props = {
-    posts: number[]
+    todo: TodoType[]
+    loadTodo: () => void
 }
 
-const FetchedPost: React.FC<Props> = ({posts}) => {
-    if (!posts.length) {
-        return <button>Load</button>;
+const FetchedPost: React.FC<Props> = ({todo, loadTodo}) => {
+   
+    if (!todo.length) {
+        return <button onClick={() => loadTodo()}>Load</button>;
     }
 
     return (
         <div>
-            
+            {todo.map(t => <p key={t.id}>{t.title}</p>)}
         </div>
     );
 };
 
-export default FetchedPost;
+const mapStateToProps = ({todo}: AppStateType) => ({
+    todo: todo.todo
+});
+
+const mapDispatchToProps = {
+    loadTodo
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(FetchedPost);
+

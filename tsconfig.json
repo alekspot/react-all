@@ -13,8 +13,12 @@
       "paths": {
         "@components/*": ["src/components/*"],
         "@utils/*": ["src/utils/*"],
-        "@types/*": ["src/types/*"]
-      }
-    },
-    "include": ["src"]
+        "@models/*": ["src/models/*"]
+      },
+      "typeRoots": [
+        "src/models",
+        "./node_modules/@types/"
+      ]
+
+    }
 }

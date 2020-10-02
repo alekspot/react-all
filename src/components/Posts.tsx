@@ -1,19 +1,32 @@
 import * as React from 'react';
 import Post from './Post';
+import {connect} from 'react-redux';
+import {AppStateType} from 'src/redux/StoreProvider';
+import {deletePost} from '../redux/actions';
 
-type Props = {
-    posts: number[]
+type PostsProps =  ReturnType<typeof mapStateToProps> & {
+    deletePost: (id: number) => void
 }
 
+const Posts: React.FC<PostsProps> = ({posts, deletePost}) => {
 
-const Posts = ({posts}: React.PropsWithChildren<Props>): JSX.Element | JSX.Element[] => {
     if (!posts.length) {
-        return <button>Load</button>;
+        return <p>No posts...</p>;
     }
-
-    return posts.map((post, index) => {
-        return <Post key={index} post={post}/>;
-    });
+   
+    return <>
+        {
+            posts.map(post => {
+                return <Post key={post.id} post={post} deletePost={deletePost}/>;
+            })
+        }
+    </>;
     
 };
-export default Posts;
+
+const mapStateToProps = (state: AppStateType) => ({
+    posts: state.post.posts
+});
+
+export const PostsContainer = connect(mapStateToProps, {deletePost})(Posts);
+    
