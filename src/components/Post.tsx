@@ -3,10 +3,10 @@ import {PostType} from '@models/Post';
 
 type Props = {
     post: PostType;
-    deletePost: (id: number) => void
+    deletePost?: (id: number) => void
 }
 
-const Post: React.FC<Props> = ({post, deletePost}) => {
+const Post: React.FC<Props> = ({post, deletePost = (id: number) => console.log}) => {
     return (
         <div onClick={() => {
             deletePost(post.id);

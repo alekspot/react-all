@@ -6,7 +6,7 @@ type PostFormProps = typeof mapDispatchToProps
 
 const PostForm: React.FC<PostFormProps> = ({addPost}) => {
     const [value, setValue] = React.useState('');
-
+    console.log('form render!');
     const addPostHandler = () => {
         if (value) {
             addPost({
